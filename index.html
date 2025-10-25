@@ -22,7 +22,7 @@
             border-radius: 1rem;
             padding: 2rem;
             box-shadow: 0 10px 15px -3px rgba(8, 41, 14, 0.1), 0 4px 6px -2px rgba(8, 41, 14, 0.05); /* 深綠陰影 */
-            min-height: 250px;
+            min-height: 250px; /* 維持最小高度 */
             display: flex;
             flex-direction: column;
             transition: transform 0.3s ease-in-out;
@@ -33,16 +33,16 @@
         }
         .box-title {
             font-weight: 700;
-            font-size: 1.75rem; /* 標題字體加大 */
+            font-size: 1.5rem; /* 標題字體稍微縮小 */
             color: #08290e; /* 主深綠色 */
             margin-bottom: 1rem;
-            border-bottom: 4px solid #14532d; /* 次深綠色底線 */
-            padding-bottom: 0.75rem;
+            border-bottom: 3px solid #14532d; /* 次深綠色底線 */
+            padding-bottom: 0.5rem; /* 縮小底線間距 */
         }
         .text-content {
-            font-size: 1.05rem;
+            font-size: 0.95rem; /* 內文字體稍微縮小 */
             color: #374151;
-            line-height: 1.7;
+            line-height: 1.6; /* 調整行高 */
             flex-grow: 1; /* 讓內容自動撐開高度 */
         }
         ul {
@@ -52,127 +52,134 @@
         li {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.5rem; /* 縮小項目間距 */
         }
         li::before {
             content: "✦"; /* 使用更具設計感的符號 */
             color: #4b855a; /* 淺一點的綠色項目符號 */
             font-weight: bold;
             display: inline-block;
-            width: 1.2em;
-            margin-left: -1em;
-            margin-right: 0.2em;
+            width: 1em; /* 調整符號寬度 */
+            margin-left: -0.8em; /* 調整符號位置 */
+            margin-right: 0.3em; /* 調整符號與文字間距 */
+            font-size: 0.9em; /* 符號大小 */
+            line-height: 1.6; /* 對齊文字行高 */
         }
         .header-bg {
             background-color: #08290e; /* 主深綠色 */
             color: white;
-            padding: 2rem;
+            padding: 1.5rem; /* 縮小 Header padding */
             border-radius: 1rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem; /* 縮小 Header 下方間距 */
             text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-            box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.2);
-            border-bottom: 8px solid #14532d;
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+            border-bottom: 6px solid #14532d; /* 縮小 Header 底線 */
+        }
+        .header-bg h1 {
+            font-size: 2rem; /* 縮小 Header 標題 */
         }
     </style>
 </head>
-<body class="p-8">
+<body class="p-6 md:p-8">
     <div class="max-w-5xl mx-auto">
         <header class="header-bg">
-            <h1 class="text-4xl font-bold text-center">Ecoshane Bank 商業模式九宮格</h1>
+            <h1 class="text-3xl md:text-4xl font-bold text-center">Ecoshane Bank 商業模式</h1>
         </header>
 
         <div class="canvas-grid">
-            <!-- 核心夥伴 (Key Partners) - 已移除粗體，維持四項 -->
+            <!-- 核心夥伴 -->
             <div class="box">
                 <div class="box-title">核心夥伴</div>
-                <ul class="text-content space-y-2">
-                    <li>綠色金融機構（提供永續貸款）</li>
-                    <li>英國社會價值國際協會 (SVI)：SROI模型認證與標準對齊。</li>
-                    <li>能源與環境數據供應商</li>
-                    <li>Open API 與雲端技術夥伴</li>
+                <ul class="text-content">
+                    <li>金融機構 (永續貸款)</li>
+                    <li>永續家 (數據 & SROI模型)</li>
+                    <li>環境數據供應商</li>
+                    <li>雲端技術 & API 夥伴</li>
                 </ul>
             </div>
-            <!-- 核心活動 (Key Activities) - 維持四項 -->
+            <!-- 核心活動 -->
             <div class="box">
                 <div class="box-title">核心活動</div>
-                <ul class="text-content space-y-2">
-                    <li>SLL/SROI 數據驗證模型開發</li>
-                    <li>開放銀行 API 介接與治理</li>
-                    <li>AI Agent 演算訓練與優化</li>
-                    <li>永續金融產品智慧媒合</li>
+                <ul class="text-content">
+                    <li>永續數據平台整合 (SLL/SROI/HRDD)</li>
+                    <li>Open API 治理</li>
+                    <li>AI 風險偵測 & 報告生成</li>
+                    <li>永續金融產品媒合</li>
                 </ul>
             </div>
-            <!-- 價值主張 (Value Proposition) - 已新增社會價值相關項目，共四項 -->
+            <!-- 價值主張 -->
             <div class="box">
                 <div class="box-title">價值主張</div>
-                <ul class="text-content space-y-2">
-                    <li>整合環境與社會價值：SROI量化影響力，推動社會共益。</li>
-                    <li>一站式淨零服務：整合碳排評估、金融媒合與永續報告。</li>
-                    <li>數據驅動決策：提供客製化、高可行性的減碳金融方案。</li>
-                    <li>高效與精準：自動化數據流，大幅降低合規與轉型成本。</li>
+                <ul class="text-content">
+                    <li>量化社會價值 (SVI 認證 SROI)</li>
+                    <li>整合人權風險管理 (HRDD)</li>
+                    <li>一站式永續金融數據服務</li>
+                    <li>AI 驅動高效合規與轉型</li>
                 </ul>
             </div>
-            <!-- 客戶關係 (Customer Relationships) - 維持四項 -->
+            <!-- 客戶關係 -->
             <div class="box">
                 <div class="box-title">客戶關係</div>
-                <ul class="text-content space-y-2">
-                    <li>平台自動化服務與即時回饋</li>
-                    <li>AI 驅動的個人化諮詢與建議</li>
-                    <li>數據儀表板 (Dashboard) 透明化追蹤</li>
-                    <li>電子郵件與專人客服支援</li>
+                <ul class="text-content">
+                    <li>自動化平台 & 即時回饋</li>
+                    <li>AI 個人化諮詢</li>
+                    <li>永續家儀表板追蹤</li>
+                    <li>客服支援</li>
                 </ul>
             </div>
-            <!-- 通路 (Channels) - 維持四項 -->
+            <!-- 通路 -->
             <div class="box">
                 <div class="box-title">通路</div>
-                <ul class="text-content space-y-2">
-                    <li>數位服務平台 (Web/App)</li>
-                    <li>與金融夥伴的聯合推廣網路</li>
-                    <li>產業協會與政府專案合作</li>
-                    <li>內容行銷與研討會</li>
+                <ul class="text-content">
+                    <li>數位平台 (Web/App)</li>
+                    <li>金融夥伴聯合推廣</li>
+                    <li>產業協會 & 政府合作</li>
+                    <li>內容行銷 & 研討會</li>
                 </ul>
             </div>
-            <!-- 客戶區隔 (Customer Segments) - 已新增社會影響力組織項目，共四項 -->
+            <!-- 客戶區隔 -->
             <div class="box">
                 <div class="box-title">客戶區隔</div>
-                <ul class="text-content space-y-2">
-                    <li>中小型企業 (SMEs)：缺乏永續轉型資源與精確數據者。</li>
-                    <li>碳密集型產業：有減碳壓力及技術/金融需求者。</li>
-                    <li>社會影響力組織 (NPO/NGO)：需量化SROI證明社會價值者。</li>
-                    <li>尋求綠色認證：需精準數據支持SLL與永續報告者。</li>
+                <ul class="text-content">
+                    <li>中小企業 (缺資源/數據)</li>
+                    <li>碳密集產業 (減碳壓力)</li>
+                    <li>社會影響力組織 (需 SROI)</li>
+                    <li>需 SLL/HRDD/永續報告數據者</li>
                 </ul>
             </div>
-            <!-- 核心資源 (Key Resources) - 已移除粗體，維持四項 -->
+            <!-- 核心資源 -->
             <div class="box">
                 <div class="box-title">核心資源</div>
-                <ul class="text-content space-y-2">
-                    <li>獨家 SLL 數據驗證與 SROI 模型（SVI 標準對齊）</li>
-                    <li>AI 演算法與開放銀行 API 串接技術</li>
-                    <li>高價值環境數據（碳排係數、能耗等）</li>
-                    <li>數據科學家與金融科技開發團隊</li>
+                <ul class="text-content">
+                    <li>永續家數據模型 (SLL/SROI/HRDD)</li>
+                    <li>AI 風險偵測演算法</li>
+                    <li>環境 & 社會風險數據庫</li>
+                    <li>專業團隊 (數據/永續/金融科技)</li>
                 </ul>
             </div>
-            <!-- 成本結構 (Cost Structure) - 維持四項 -->
+            <!-- 成本結構 -->
             <div class="box">
                 <div class="box-title">成本結構</div>
-                <ul class="text-content space-y-2">
-                    <li>技術研發與平台維護費用（固定成本）</li>
-                    <li>數據獲取與 API 服務訂閱成本（變動成本）</li>
-                    <li>伺服器託管（雲端服務）費用</li>
-                    <li>行銷推廣與人力資源成本</li>
+                <ul class="text-content">
+                    <li>研發 & 平台維護</li>
+                    <li>數據獲取 & API 訂閱</li>
+                    <li>雲端服務費用</li>
+                    <li>行銷 & 人力成本</li>
                 </ul>
             </div>
-            <!-- 收益來源 (Revenue Streams) - 已新增第四項，共四項 -->
+            <!-- 收益來源 -->
             <div class="box">
                 <div class="box-title">收益來源</div>
-                <ul class="text-content space-y-2">
-                    <li>綠色貸款媒合佣金（向金融機構收費）</li>
-                    <li>SLL/SROI 數據服務訂閱費用（向企業用戶收費）</li>
-                    <li>客製化 AI 諮詢與顧問服務費</li>
-                    <li>永續報告與 SROI 獨立驗證報告服務費</li>
+                <ul class="text-content">
+                    <li>SLL 貸款媒合佣金</li>
+                    <li>永續數據服務訂閱費 (E/S+/S-)</li>
+                    <li>AI 永續/HRDD 顧問費</li>
+                    <li>報告驗證服務費 (SROI/HRDD)</li>
                 </ul>
             </div>
         </div>
     </div>
 </body>
 </html>
+
+
